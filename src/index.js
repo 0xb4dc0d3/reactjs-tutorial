@@ -4,11 +4,20 @@ import './index.css';
 
 //Square Component
 class Square extends React.Component {
+//Add a constructor tot he class to initialize the state:
+constructor(props){
+  super(props);
+  this.state = {
+    value: "",
+  };
+}
+
   render() {
     return (
       //Create a button with the value of this.renderSquare(n)
-      <button className="square">
-        {this.props.value}
+      //if you press on the square you get an alert
+      <button className="square" onClick={() => this.setState({value: 'X'})}>
+        {this.state.value}
       </button>
     );
   }
